@@ -1,6 +1,6 @@
-# flow
+# FLOW
 
-A new Flutter application.
+Solution Challenge Prosperity Hackathon Project
 
 ## Getting Started
 
