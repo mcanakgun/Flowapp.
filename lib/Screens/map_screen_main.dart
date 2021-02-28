@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart';
 
@@ -16,6 +17,7 @@ class _MapScreenMainState extends State<MapScreenMain> {
   List<LatLng> polylineCoordinates = [];
   BitmapDescriptor mapMarker;
   BitmapDescriptor trafficMarker;
+  BitmapDescriptor opacityTrafficMarker;
   BitmapDescriptor arrowMarker;
   String searchAddr;
 
@@ -25,6 +27,7 @@ class _MapScreenMainState extends State<MapScreenMain> {
     setCustomMarker();
     setCustomMarker2();
     setCustomMarker3();
+    setCustomMarker4();
   }
 
   void setCustomMarker() async {
@@ -42,6 +45,11 @@ class _MapScreenMainState extends State<MapScreenMain> {
         ImageConfiguration(), "assets/images/mark.png");
   }
 
+  void setCustomMarker4() async {
+    opacityTrafficMarker = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(), "assets/images/opacitymark.png");
+  }
+
   // Create the polylines for showing the route between two places
 
   void _onMapCreated(GoogleMapController controller) {
@@ -49,7 +57,7 @@ class _MapScreenMainState extends State<MapScreenMain> {
       mapController = controller;
       _markers.add(
         Marker(
-          icon: trafficMarker,
+          icon: opacityTrafficMarker,
           markerId: MarkerId('id-2'),
           position: LatLng(41.0536905, 28.9871126),
           infoWindow: InfoWindow(title: "Traffic Light"),
@@ -57,24 +65,128 @@ class _MapScreenMainState extends State<MapScreenMain> {
       );
       _markers.add(
         Marker(
-          icon: trafficMarker,
+          icon: opacityTrafficMarker,
           markerId: MarkerId('id-3'),
           position: LatLng(41.0555258, 28.9857885),
           infoWindow: InfoWindow(title: "Traffic Light"),
         ),
       );
       _markers.add(Marker(
-        icon: trafficMarker,
+        icon: opacityTrafficMarker,
         markerId: MarkerId('id-4'),
         position: LatLng(41.0543779, 28.9850725),
         infoWindow: InfoWindow(title: "Traffic Light"),
       ));
       _markers.add(
         Marker(
-          icon: trafficMarker,
+          icon: opacityTrafficMarker,
           markerId: MarkerId('id-5'),
           position: LatLng(41.0529013, 28.9837823),
           infoWindow: InfoWindow(title: "Traffic Light"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-6'),
+          position: LatLng(41.048953, 28.985511),
+          infoWindow: InfoWindow(title: "Traffic LightHome1"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-7'),
+          position: LatLng(41.048781, 28.987876),
+          infoWindow: InfoWindow(title: "Traffic LightHome2"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-8'),
+          position: LatLng(41.050110, 28.989181),
+          infoWindow: InfoWindow(title: "Traffic LightHome3"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-9'),
+          position: LatLng(41.051339, 28.990016),
+          infoWindow: InfoWindow(title: "Traffic LightHome4"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-10'),
+          position: LatLng(41.048953, 28.985511),
+          infoWindow: InfoWindow(title: "Traffic LightGym1"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-11'),
+          position: LatLng(41.051348, 28.987191),
+          infoWindow: InfoWindow(title: "Traffic LightGym2"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-12'),
+          position: LatLng(41.053588, 28.987356),
+          infoWindow: InfoWindow(title: "Traffic LightGym3"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-13'),
+          position: LatLng(41.057004, 28.987565),
+          infoWindow: InfoWindow(title: "Traffic LightGym4"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-14'),
+          position: LatLng(41.052808, 28.983792),
+          infoWindow: InfoWindow(title: "Traffic LightRandom1"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-15'),
+          position: LatLng(41.048042, 28.980601),
+          infoWindow: InfoWindow(title: "Traffic LightRandom2"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-16'),
+          position: LatLng(41.053676, 28.993791),
+          infoWindow: InfoWindow(title: "Traffic LightRandom3"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-17'),
+          position: LatLng(41.055540, 28.979374),
+          infoWindow: InfoWindow(title: "Traffic LightRandom4"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-18'),
+          position: LatLng(41.058887, 28.991517),
+          infoWindow: InfoWindow(title: "Traffic LightRandom5"),
         ),
       );
       _markers.add(
@@ -165,6 +277,111 @@ class _MapScreenMainState extends State<MapScreenMain> {
                   searchAddr = val;
                 });
               },
+            ),
+          ),
+        ),
+        Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25),
+              color: Colors.white,
+            ),
+            height: 150,
+            width: 600,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  "İstatistikleriniz",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.beenhere,
+                            size: 30,
+                            color: Colors.green,
+                          ),
+                          Text(
+                            "%14.2",
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            "Yakıt Tasarrufu",
+                            style: TextStyle(
+                              fontSize: 18,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Icon(
+                            FontAwesomeIcons.car,
+                            color: Colors.green,
+                            size: 30,
+                          ),
+                          Text(
+                            "4.75",
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            "KM Flow",
+                            style: TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Icon(
+                            FontAwesomeIcons.trafficLight,
+                            size: 25,
+                            color: Colors.green,
+                          ),
+                          Text(
+                            "27",
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            "Kırmızı Işık Flowlandı",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),

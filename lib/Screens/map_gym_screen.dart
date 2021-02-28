@@ -9,6 +9,7 @@ class MapGymScreen extends StatefulWidget {
 class _MapGymScreenState extends State<MapGymScreen> {
   BitmapDescriptor mapMarker;
   BitmapDescriptor trafficMarker;
+  BitmapDescriptor opacityTrafficMarker;
   BitmapDescriptor arrowMarker;
   BitmapDescriptor greenWay;
   String searchAddr;
@@ -22,6 +23,7 @@ class _MapGymScreenState extends State<MapGymScreen> {
     setCustomMarker2();
     setCustomMarker3();
     setCustomMarker4();
+    setCustomMarker5();
   }
 
   void setCustomMarker() async {
@@ -42,6 +44,11 @@ class _MapGymScreenState extends State<MapGymScreen> {
   void setCustomMarker4() async {
     greenWay = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(), "assets/images/greenway.png");
+  }
+
+  void setCustomMarker5() async {
+    opacityTrafficMarker = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(), "assets/images/opacitymark.png");
   }
 
   void _onMapCreated(GoogleMapController controller) {
@@ -270,6 +277,140 @@ class _MapGymScreenState extends State<MapGymScreen> {
           infoWindow: InfoWindow(title: 'Gym'),
         ),
       );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-2'),
+          position: LatLng(41.0536905, 28.9871126),
+          infoWindow: InfoWindow(title: "Traffic Light"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-3'),
+          position: LatLng(41.0555258, 28.9857885),
+          infoWindow: InfoWindow(title: "Traffic Light"),
+        ),
+      );
+      _markers.add(Marker(
+        icon: opacityTrafficMarker,
+        markerId: MarkerId('id-4'),
+        position: LatLng(41.0543779, 28.9850725),
+        infoWindow: InfoWindow(title: "Traffic Light"),
+      ));
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-5'),
+          position: LatLng(41.0529013, 28.9837823),
+          infoWindow: InfoWindow(title: "Traffic Light"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-33'),
+          position: LatLng(41.048953, 28.985511),
+          infoWindow: InfoWindow(title: "Traffic LightHome1"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-50'),
+          position: LatLng(41.048781, 28.987876),
+          infoWindow: InfoWindow(title: "Traffic LightHome2"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-51'),
+          position: LatLng(41.050110, 28.989181),
+          infoWindow: InfoWindow(title: "Traffic LightHome3"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-52'),
+          position: LatLng(41.051339, 28.990016),
+          infoWindow: InfoWindow(title: "Traffic LightHome4"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: trafficMarker,
+          markerId: MarkerId('id-53'),
+          position: LatLng(41.048953, 28.985511),
+          infoWindow: InfoWindow(title: "Traffic LightGym1"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: trafficMarker,
+          markerId: MarkerId('id-54'),
+          position: LatLng(41.051348, 28.987191),
+          infoWindow: InfoWindow(title: "Traffic LightGym2"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: trafficMarker,
+          markerId: MarkerId('id-55'),
+          position: LatLng(41.053588, 28.987356),
+          infoWindow: InfoWindow(title: "Traffic LightGym3"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: trafficMarker,
+          markerId: MarkerId('id-56'),
+          position: LatLng(41.057004, 28.987565),
+          infoWindow: InfoWindow(title: "Traffic LightGym4"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-57'),
+          position: LatLng(41.052808, 28.983792),
+          infoWindow: InfoWindow(title: "Traffic LightRandom1"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-58'),
+          position: LatLng(41.048042, 28.980601),
+          infoWindow: InfoWindow(title: "Traffic LightRandom2"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-59'),
+          position: LatLng(41.053676, 28.993791),
+          infoWindow: InfoWindow(title: "Traffic LightRandom3"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-60'),
+          position: LatLng(41.055540, 28.979374),
+          infoWindow: InfoWindow(title: "Traffic LightRandom4"),
+        ),
+      );
+      _markers.add(
+        Marker(
+          icon: opacityTrafficMarker,
+          markerId: MarkerId('id-61'),
+          position: LatLng(41.058887, 28.991517),
+          infoWindow: InfoWindow(title: "Traffic LightRandom5"),
+        ),
+      );
     });
   }
 
@@ -286,6 +427,73 @@ class _MapGymScreenState extends State<MapGymScreen> {
           markers: _markers,
           myLocationEnabled: true,
           myLocationButtonEnabled: true,
+        ),
+        Positioned(
+          top: 20,
+          right: 10,
+          left: 10,
+          child: Container(
+            height: 120,
+            width: 600,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25),
+              color: Colors.white,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 2.5,
+                ),
+                Text(
+                  "Belirlenen Güzergah İçin Optimum Hız",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "60",
+                      style: TextStyle(
+                        fontSize: 50,
+                        color: Colors.red,
+                      ),
+                    ),
+                    Icon(
+                      Icons.arrow_downward,
+                      size: 50,
+                      color: Colors.red,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ),
+        Positioned(
+          bottom: 15,
+          left: 150,
+          child: RawMaterialButton(
+            onPressed: () {
+              Navigator.pushNamed(context, "/MapMain");
+            },
+            elevation: 2.0,
+            fillColor: Colors.white,
+            child: Text(
+              "Dur",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.red,
+              ),
+            ),
+            padding: EdgeInsets.all(30.0),
+            shape: CircleBorder(),
+          ),
         ),
       ]),
     );
