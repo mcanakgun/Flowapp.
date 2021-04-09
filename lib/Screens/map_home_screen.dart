@@ -339,7 +339,7 @@ class _MapHomeScreenState extends State<MapHomeScreen> {
                   height: 2.5,
                 ),
                 Text(
-                  "Belirlenen Güzergah İçin Optimum Hız",
+                  "Optimal Speed for the Current Route",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25,
@@ -377,7 +377,7 @@ class _MapHomeScreenState extends State<MapHomeScreen> {
             elevation: 2.0,
             fillColor: Colors.white,
             child: Text(
-              "Dur",
+              "Stop",
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,

@@ -298,7 +298,7 @@ class _MapScreenMainState extends State<MapScreenMain> {
                   height: 5,
                 ),
                 Text(
-                  "İstatistikleriniz",
+                  "Your Statistics",
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
@@ -324,7 +324,7 @@ class _MapScreenMainState extends State<MapScreenMain> {
                             ),
                           ),
                           Text(
-                            "Yakıt Tasarrufu",
+                            "Fuel Saved",
                             style: TextStyle(
                               fontSize: 18,
                             ),
@@ -370,7 +370,7 @@ class _MapScreenMainState extends State<MapScreenMain> {
                             ),
                           ),
                           Text(
-                            "Kırmızı Işık Flowlandı",
+                            "Red Lights Flowed",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 18,

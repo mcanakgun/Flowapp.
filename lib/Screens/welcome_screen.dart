@@ -49,6 +49,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 children: <Widget>[
                   Container(
                     alignment: Alignment.centerRight,
+                    // ignore: deprecated_member_use
                     child: FlatButton(
                       onPressed: () {
                         Navigator.pushNamed(context, "/Login");
@@ -162,6 +163,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(50),
+                    // ignore: deprecated_member_use
                     child: FlatButton(
                       padding: EdgeInsets.symmetric(vertical: 20),
                       shape: RoundedRectangleBorder(
